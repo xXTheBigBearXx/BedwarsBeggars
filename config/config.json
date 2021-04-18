@@ -1,0 +1,12 @@
+{
+  "minecraft": {
+    "username": "minecraft username or email",
+    "password": "minecraft password",
+    "authType": "mojang",
+    "server": {
+      "address": "catma.id.hypixel.net",
+      "port": 25565,
+      "version": "1.8.9"
+    }
+  }
+}
