@@ -31,6 +31,17 @@ function get2BwLob1(t) {
     });
 }
 
+function antiAFK(t) {
+    return new Promise(function (resolve) {
+        setTimeout(function () {
+            mc.chat("/stuck");
+            antiAFK(30000);
+        }, t);
+    });
+}
+
+antiAFK(30000);
+
 mc.on("login", () => {
     mc.chat("/whereami");
 });
