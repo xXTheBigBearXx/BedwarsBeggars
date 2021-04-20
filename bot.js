@@ -71,3 +71,18 @@ mc.on("messagestr", async (msg) => {
     }
 
 });
+
+mc.on("kicked", (reason) => {
+    console.log("\nKicked from server:\n\n" + reason);
+    process.exit(0);
+});
+
+mc.on("end", () => {
+    console.log("\nNo longer connected to server.");
+    process.exit(0);
+});
+
+mc.on("error", (err) => {
+    console.log("\nError:\n\n" + err);
+    process.exit(1);
+});
