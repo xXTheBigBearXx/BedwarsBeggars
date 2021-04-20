@@ -1,5 +1,5 @@
 const Mineflayer = require("mineflayer");
-const config = require("./config/config.json");
+const config = require("./config/minecraft.json");
 const regex = require("./regex.js");
 
 const mc = Mineflayer.createBot(config);
