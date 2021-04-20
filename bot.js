@@ -2,15 +2,7 @@ const Mineflayer = require("mineflayer");
 const config = require("./config/config.json");
 const regex = require("./regex.js");
 
-const mc = Mineflayer.createBot({
-    cacheChannels: true,
-    host: config.minecraft.server.address,
-    port: parseInt(config.minecraft.server.port ? config.minecraft.server.port : 25565),
-    username: config.minecraft.username,
-    password: config.minecraft.password,
-    version: config.minecraft.server.version,
-    auth: config.minecraft.authType ? config.minecraft.authType : 'mojang',
-});
+const mc = Mineflayer.createBot(config);
 mc.settings.viewDistance = "tiny";
 
 var whereami = "";
