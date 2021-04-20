@@ -12,10 +12,10 @@ function get2BwLob1(t) {
         setTimeout(function () {
             if (whereami != "bedwarslobby1") {
                 if (/bedwarslobby\d{1,3}/gi.test(whereami)) {
-                    console.log("Attempting to switch to bedwars lobby 1...")
-                    mc.chat("/swaplobby 1")
+                    console.log("Attempting to switch to bedwars lobby 1...");
+                    mc.chat("/swaplobby 1");
                 } else {
-                    console.log("Sending to any bedwars lobby...")
+                    console.log("Sending to any bedwars lobby...");
                     mc.chat("/l bw");
                 }
             }
