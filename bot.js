@@ -38,8 +38,7 @@ mc.on("login", () => {
     mc.chat("/whereami");
 });
 
-mc.on("message", async (msg) => {
-    msg = msg.toString();
+mc.on("messagestr", async (msg) => {
     var beggar = false;
 
     if (msg.startsWith("You are currently ") && (msg.includes("in limbo") || msg.includes("connected to server "))) {
