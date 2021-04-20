@@ -25,9 +25,17 @@ function get2BwLob1(t) {
 
 function antiAFK(t) {
     return new Promise(function (resolve) {
-        setTimeout(function () {
-            mc.chat("/stuck");
-            antiAFK(30000);
+        setTimeout(async function () {
+            console.log("Moving forward...");
+            mc.setControlState("forward", true);
+            new Promise(function (resolve) {
+                setTimeout(function () {
+                    mc.setControlState("forward", false);
+                    console.log("Executing /stuck...");
+                    mc.chat("/stuck");
+                    antiAFK(30000);
+                }, 500);
+            });
         }, t);
     });
 }
