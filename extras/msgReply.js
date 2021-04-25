@@ -14,6 +14,6 @@ module.exports = function (mc, msg) {
   if (/From\s(\[.{1,}\]\s)?\w{1,16}\:\s.{1,}/mi.test(msg)) {
     let rand = Math.floor(Math.random() * (msgReply.length - 1));
     mc.chat("/r " + msgReply[rand]);
-    console.log("I sent response no. " + rand + " to someone!");
+    console.log("Replying with response no. " + rand);
   }
 };
