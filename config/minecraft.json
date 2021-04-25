@@ -5,4 +5,8 @@
   "version": "1.8.9",
   "username": "minecraft username or email",
   "password": "minecraft password"
+
+  "extras": {
+    "autoResponse": false
+  }
 }

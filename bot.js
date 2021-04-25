@@ -59,6 +59,8 @@ mc.on("messagestr", async (msg) => {
     if (msg.startsWith("You were kicked while joining that server!")) {
         await get2BwLob1(500);
     }
+    
+    if (config.extras.autoResponse) require("./extras/msgReply.js")(mc, msg);
 
     regex.forEach((pattern) => {
         if (pattern.test(msg)) beggar = true;
