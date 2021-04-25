@@ -10,4 +10,9 @@ const msgReply = [
   'Oh my god, is that Joe?'
 ]
 
-module.exports = msgReply;
+module.exports = function (mc, msg) {
+    let rand = Math.floor(Math.random() * (msgReply.length - 1));
+    mc.chat("/r " + msgReply[rand]);
+    console.log("I sent response no. " + rand + " to someone!");
+  
+};

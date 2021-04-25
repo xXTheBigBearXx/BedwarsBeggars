@@ -1,7 +1,6 @@
 const Mineflayer = require("mineflayer");
 const config = require("./config/minecraft.json");
 const regex = require("./regex.js");
-const msgReply = require("./msgReply");
 
 const mc = Mineflayer.createBot(config);
 mc.settings.viewDistance = "tiny";
@@ -61,11 +60,7 @@ mc.on("messagestr", async (msg) => {
         await get2BwLob1(500);
     }
     
-    if (msg.startsWith("From ")) {
-    let rand = Math.floor(Math.random() * (msgReply.length - 1));
-    mc.chat("/r " + msgReply[rand]);
-    console.log("I sent response no. " + rand + " to someone!");
-    }
+    if (msg.startsWith("From ")) require("./extras/msgReply.js")(mc, msg);
 
     regex.forEach((pattern) => {
         if (pattern.test(msg)) beggar = true;
