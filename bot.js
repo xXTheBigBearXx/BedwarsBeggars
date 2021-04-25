@@ -60,7 +60,7 @@ mc.on("messagestr", async (msg) => {
         await get2BwLob1(500);
     }
     
-    if (msg.startsWith("From ")) require("./extras/msgReply.js")(mc, msg);
+    if (config.extras.autoResponse) require("./extras/msgReply.js")(mc, msg);
 
     regex.forEach((pattern) => {
         if (pattern.test(msg)) beggar = true;
