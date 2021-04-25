@@ -62,7 +62,9 @@ mc.on("messagestr", async (msg) => {
     }
     
     if (msg.startsWith("From ")) {
-        mc.chat("/r " + msgReply);
+    let rand = Math.floor(Math.random() * (msgReply.length - 1));
+    mc.chat("/r " + msgReply[rand]);
+    console.log("I sent response no. " + rand + " to someone!");
     }
 
     regex.forEach((pattern) => {
