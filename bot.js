@@ -1,6 +1,7 @@
 const Mineflayer = require("mineflayer");
 const config = require("./config/minecraft.json");
 const regex = require("./regex.js");
+const msgReply = require("./msgReply");
 
 const mc = Mineflayer.createBot(config);
 mc.settings.viewDistance = "tiny";
@@ -58,6 +59,10 @@ mc.on("messagestr", async (msg) => {
 
     if (msg.startsWith("You were kicked while joining that server!")) {
         await get2BwLob1(500);
+    }
+    
+    if (msg.startsWith("From ")) {
+        mc.chat("/r " + msgReply);
     }
 
     regex.forEach((pattern) => {
