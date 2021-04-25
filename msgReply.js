@@ -5,9 +5,8 @@ const msgReply = [
   'Dude, stop messaging me.',
   'I will literally block you. Go away.',
   'Permanently is a catboy.',
-  'Permanently? More like Permanentgay.',
+  'Permanently? More like PermanentLOSER.',
   'What\'s that? You like men? Woah, that\'s pretty cool.',
-  '@Permanently#0001, @Jayًًً#7412, @alfie#1111',
   'Oh my god, is that Joe?'
 ]
 
