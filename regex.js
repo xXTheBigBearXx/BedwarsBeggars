@@ -10,6 +10,7 @@ const reg = [
     /se{1,}n{1,}d{1,}\s{0,}a?\s{1,}me\s{0,}a?\s{1,}(m\.?v\.?p|v\.?i\.?p|rank|\+|(.{2,10}\s{0,})?cosmetics?)/gim, // send (a) me (a) m(.)v(.)p(+)/v(.)i(.)p(+)/rank/++/(* )cosmetic(s)
     /looking\s{1,}for\s{0,}a?\s{1,}(m\.?v\.?p\s{1,}gif{1,}t{1,}|v\.?i\.?p\s{1,}gif{1,}t{1,}|rank|\+|(.{2,10}\s{0,})?cosmetics?)/gim, // looking for (a) m(.)v(.)p(+) gift/v(.)i(.)p(+) gift/rank/++/(* )cosmetic(s)
     /can\s{1,}i\s{1,}(p{1,}l{1,}(e{1,}a{1,}s{1,}e{1,}|i?s{1,}|z{1,})\s{1,})?ha(s|ve?)\s{1,}(m\.?v\.?p|v\.?i\.?p|rank|\+|(.{2,10}\s{0,})?cosmetics?)/gim, // can i (please/pls/plz)? have/has m(.)v(.)p/v(.)i(.)p/rank/+/(* )cosmetic(s)
+    /pl(s{1,}|ease{1,})\s{0,}\/?gi{1,}ft/gmi, // pls/please (/)gift
 ]
 
 module.exports = reg;
