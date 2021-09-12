@@ -1,10 +1,11 @@
 {
   "host": "catma.id.hypixel.net",
-  "port": "25565",
-  "auth": "mojang",
+  "auth": "mojang/microsoft",
   "version": "1.8.9",
-  "username": "minecraft username or email",
+  "username": "minecraft/microsoft username or email",
   "password": "minecraft password",
+  "viewDistance": "tiny",
+  "chatLengthLimit": "256",
 
   "extras": {
     "autoResponse": false

@@ -3,20 +3,19 @@ const config = require("./config/minecraft.json");
 const regex = require("./regex.js");
 
 const mc = Mineflayer.createBot(config);
-mc.settings.viewDistance = "tiny";
 
 var whereami = "";
 
 function get2BwLob1(t) {
   return new Promise(function (resolve) {
     setTimeout(function () {
-      if (whereami != "bedwarslobby1") {
-        if (/bedwarslobby\d{1,3}/gi.test(whereami)) {
+      if (whereami != "dynamiclobby11F") {
+        if (whereami.includes("dynamiclobby")) {
           console.log("Attempting to switch to bedwars lobby 1...");
           mc.chat("/swaplobby 1");
         } else {
           console.log("Sending to any bedwars lobby...");
-          mc.chat("/l bw");
+          mc.chat("/l bedwars");
         }
       }
     }, t);
@@ -42,9 +41,7 @@ function antiAFK(t) {
 
 antiAFK(30000);
 
-mc.on("login", () => {
-  mc.chat("/whereami");
-});
+mc.on("login", () => mc.chat("/whereami"));
 
 mc.on("messagestr", async (msg) => {
   var beggar = false;
@@ -56,22 +53,13 @@ mc.on("messagestr", async (msg) => {
     await get2BwLob1(1000);
   }
 
-  if (msg.startsWith("You were kicked while joining that server!")) {
-    await get2BwLob1(500);
-  }
+  if (msg.startsWith("You were kicked while joining that server!")) await get2BwLob1(500);
 
   if (config.extras.autoResponse) require("./extras/msgReply.js")(mc, msg);
 
-  regex.forEach((pattern) => {
-    if (pattern.test(msg)) beggar = true;
-  });
+  regex.forEach((pattern) => {if (pattern.test(msg)) beggar = true;});
 
-  if (beggar) {
-    console.log("\x1b[31mBEGGAR > \x1b[0m" + msg);
-  } else {
-    console.log("\x1b[32mIngame > \x1b[0m" + msg);
-  }
-
+  if (beggar) console.log("\x1b[31mBEGGAR > \x1b[0m" + msg); else console.log("\x1b[32mIngame > \x1b[0m" + msg);
 });
 
 mc.on("kicked", (reason) => {
