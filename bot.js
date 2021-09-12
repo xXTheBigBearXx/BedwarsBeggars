@@ -15,7 +15,7 @@ function get2BwLob1(t) {
           mc.chat("/swaplobby 1");
         } else {
           console.log("Sending to any bedwars lobby...");
-          mc.chat("/l bedwars");
+          mc.chat("/l bw");
         }
       }
     }, t);
